@@ -184,7 +184,7 @@ The 'Cancel / Back' button should have:
 
 You will need to define additional CSS rules to style the button colours
 */
-button, a.btn {
+.btn {
 
     border: 0px;
     margin-bottom: 5px;
@@ -200,10 +200,25 @@ button, a.btn {
     text-transform: uppercase;
     font-size: 12px;
     color: white;
-    background-color: #246fb4;
-
+    text-decoration:none;
+    cursor:default;
 }
 
+.btn.register {
+    background-color: #246fb4;
+}
+
+.btn.register:hover {
+    background-color:#448fd4;
+}
+
+.btn.cancel {
+    background-color:#7c7c7c;
+}
+
+.btn.cancel:hover {
+    background-color:#929292;
+}
 
 /* Registration Form Grid Layout */
 
@@ -229,7 +244,7 @@ A class for a form element label
 */
 .form-label {
 
-
+    font-weight: bold;
 }
 
 /*
