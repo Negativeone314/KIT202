@@ -118,29 +118,36 @@ function calculateTax(income) {
     }
 }
 
-function determineTaxes(clients) {
+function showTaxes(clients) {
     var tax;
     var name;
     var income;
     var after_tax;
+    var message;
 
     for(const person in clients) {
         name = `${person}`;
         income = `${clients[person]}`;
-        tax = calculateTax(income);
+        tax = (calculateTax(income)).toFixed(2);
         after_tax = income - tax;
 
-        console.log(`Given ${name}'s income of $${income.toFixed(2)}, they pay $${tax.toFixed(2)} in tax, so their after tax income is $${after_tax.toFixed(2)}.`)
+        message = `Given ${name}'s income of $${income}, they pay $${tax} in tax, so their after tax income is $${after_tax}.`;
+        document.getElementById("activity3-taxes").innerHTML += `Given ${name}'s income of $${income}, they pay $${tax} in tax, so their after tax income is $${after_tax}.<br><br>`;
     }
 }
 
-determineTaxes(clients);
+showTaxes(clients);
 
 
 /* Activity 4: Arbitrary HTML */
 
 //TODO Write your function for Activity 4 here
 
-
+function writeRandom() {
+    var message = "This is a random message!";
+    document.getElementById("activity4-html").innerHTML = message;
+}
 
 // And call that function here
+
+writeRandom();
